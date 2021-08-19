@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "laravel": "0.0.1",
+        "link-prevue": "^1.2.0",
         "vue-cli": "^2.9.6"
     }
 }
-  

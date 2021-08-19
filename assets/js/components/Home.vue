@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Shoppin</h1>
     <div class="url-group">
       <input
         type="text"
