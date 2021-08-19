@@ -91,7 +91,7 @@ h1 {
   font-size: 14px;
   letter-spacing: 0.1em;
   color: #ffffff;
-  background-color: #ffa9be;
+
   padding: 10px 20px 10px 20px;
   text-align: center;
   display: inline-block;
@@ -104,6 +104,6 @@ h1 {
 }
 
 .url-group a:hover {
-  background-color: #ff8fab;
+  background-color: #f6e824;
 }
 </style>
