@@ -1,7 +1,7 @@
 {
     "name": "Shoppin",
-    "version": "1.0.0",
-    "description": "A basic extension to quickly generate a shop list of links.",
+    "version": "1.0",
+    "description": "The Simple way to save your Shoppin List",
     "permissions": [
         "storage",
         "webRequest",
@@ -9,11 +9,9 @@
         "http://*/",
         "https://*/"
     ],
- 
- 
     "browser_action": {
+        "default_icon": "/images/favicon.png",
         "default_popup": "index.html"
-       
     },
     "manifest_version": 2
 }

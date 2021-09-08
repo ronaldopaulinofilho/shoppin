@@ -1,4 +1,9 @@
+@import "element-ui/lib/theme-chalk/index.css";
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
 body {
-  width: 500px;
-  height: 1000px;
+  width: 600px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
 }
