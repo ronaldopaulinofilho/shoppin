@@ -28,12 +28,20 @@ export default {
     };
   },
 
+  mounted() {
+    if (localStorage.getItem("itemList")) {
+      this.itemList = JSON.parse(localStorage.getItem("itemList"));
+      this.isEmpty = false;
+    }
+  },
   methods: {
     getCategory(description) {
-      this.itemList = this.itemList.filter(
-        (item) => item.description !== description
-      );
       localStorage.getItem("itemList");
+      console.log("this.itemList.length");
+
+      this.itemList = this.itemList.filter(
+        (item) => item.description === "Eletro"
+      );
     },
 
     filterItem(description) {

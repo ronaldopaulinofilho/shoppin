@@ -1678,7 +1678,7 @@ function mergeFn (a, b) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _js_components_App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/components/App.vue */ "./assets/js/components/App.vue");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./assets/js/router/index.js");
 /* harmony import */ var _scss_popup_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/popup.scss */ "./assets/scss/popup.scss");
@@ -1686,8 +1686,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var element_ui_lib_theme_chalk_index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-ui/lib/theme-chalk/index.css */ "./node_modules/element-ui/lib/theme-chalk/index.css");
 /* harmony import */ var element_ui_lib_locale_lang_pt_br__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! element-ui/lib/locale/lang/pt-br */ "./node_modules/element-ui/lib/locale/lang/pt-br.js");
-/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-the-mask */ "./node_modules/vue-the-mask/dist/vue-the-mask.js");
-/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_the_mask__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -1695,12 +1693,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-vue__WEBPACK_IMPORTED_MODULE_7__["default"].use((element_ui__WEBPACK_IMPORTED_MODULE_3___default()), {
+vue__WEBPACK_IMPORTED_MODULE_6__["default"].use((element_ui__WEBPACK_IMPORTED_MODULE_3___default()), {
   locale: element_ui_lib_locale_lang_pt_br__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
-vue__WEBPACK_IMPORTED_MODULE_7__["default"].use((vue_the_mask__WEBPACK_IMPORTED_MODULE_6___default()));
-new vue__WEBPACK_IMPORTED_MODULE_7__["default"]({
+new vue__WEBPACK_IMPORTED_MODULE_6__["default"]({
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"],
   render: function render(h) {
     return h(_js_components_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -1905,7 +1901,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var link_prevue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! link-prevue */ "./node_modules/link-prevue/dist/link-prevue.umd.min.js");
 /* harmony import */ var link_prevue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(link_prevue__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -2155,12 +2150,19 @@ __webpack_require__.r(__webpack_exports__);
       description: ""
     };
   },
+  mounted: function mounted() {
+    if (localStorage.getItem("itemList")) {
+      this.itemList = JSON.parse(localStorage.getItem("itemList"));
+      this.isEmpty = false;
+    }
+  },
   methods: {
     getCategory: function getCategory(description) {
-      this.itemList = this.itemList.filter(function (item) {
-        return item.description !== description;
-      });
       localStorage.getItem("itemList");
+      console.log("this.itemList.length");
+      this.itemList = this.itemList.filter(function (item) {
+        return item.description === "Eletro";
+      });
     },
     filterItem: function filterItem(description) {
       this.$emit("filter-item-event", description);
@@ -2203,6 +2205,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2221,12 +2224,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         url: "",
         images: ""
       },
-      isCollapse: true
+      isCollapse: true,
+      isEmpty: true
     };
   },
   mounted: function mounted() {
     if (localStorage.getItem("itemList")) {
       this.itemList = JSON.parse(localStorage.getItem("itemList"));
+      this.isEmpty = false;
     }
   },
   watch: {
@@ -4113,7 +4118,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=SF-UI:400,600);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.category {\n  border-radius: 20px 2px 30px 20px;\n  background-color: #93b5db;\n  min-width: 10%;\n  max-width: 20%;\n  height: 30px;\n  padding: 8px;\n  margin-top: 100px;\n  box-shadow: 2px 16px 30px 0px rgba(0, 0, 0, 0.15);\n}\n.eletroDefinition {\n  backgroundcolor: \"#f5365c\";\n}\n.vestuarioDefinition {\n  backgroundcolor: \"#ffbb33\";\n}\n.mercadoDefinition {\n  backgroundcolor: \"#5e72e4\";\n}\n.eletrodomesticoDefinition {\n  backgroundcolor: \"#11cdef\";\n}\n.belezaDefinition {\n  backgroundcolor: \"#80bdef\";\n}\n.informaticaDefinition {\n  background: \"#f8bdef\";\n}\n.livrosDefinition {\n  backgroundcolor: \"#90bdbe\";\n}\n.diversosDefinition {\n  backgroundcolor: \"#fbff08\";\n}\n.card-item {\n  border-radius: 20px;\n  background-color: #fff;\n  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);\n  font-family: \"Hind Siliguri\", sans-serif;\n  float: center;\n  margin: 20px;\n  display: flex;\n  flex-direction: collumn;\n  justify-content: space-between;\n}\n.card-img-top {\n  height: 30px;\n  width: 80px;\n}\n.text {\n  font-size: 10px;\n  font-color: rgb(12, 28, 107);\n}\n.spinner {\n  margin-top: 40%;\n  margin-left: 45%;\n  height: 28px;\n  width: 28px;\n  -webkit-animation: rotate 0.8s infinite linear;\n          animation: rotate 0.8s infinite linear;\n  border: 2px solid #93b5db;\n  border-right-color: transparent;\n  border-radius: 50%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.category {\n  border-radius: 20px 20px 2px 20px;\n  background-color: #f3f722;\n  min-width: 12%;\n  max-width: 20%;\n  height: 30px;\n  padding: 8px;\n  margin-top: 108px;\n  box-shadow: 0px -3px 8px rgba(112, 144, 176, 0.16);\n}\n.eletroDefinition {\n  backgroundcolor: \"#f5365c\";\n}\n.vestuarioDefinition {\n  backgroundcolor: \"#ffbb33\";\n}\n.mercadoDefinition {\n  backgroundcolor: \"#5e72e4\";\n}\n.eletrodomesticoDefinition {\n  backgroundcolor: \"#11cdef\";\n}\n.belezaDefinition {\n  backgroundcolor: \"#80bdef\";\n}\n.informaticaDefinition {\n  background: \"#f8bdef\";\n}\n.livrosDefinition {\n  backgroundcolor: \"#90bdbe\";\n}\n.diversosDefinition {\n  backgroundcolor: \"#fbff08\";\n}\n.card-item {\n  border-radius: 20px;\n  background-color: #fff;\n  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);\n  font-family: \"Hind Siliguri\", sans-serif;\n  float: center;\n  margin: 20px;\n  display: flex;\n  flex-direction: collumn;\n  justify-content: space-between;\n}\n.card-img-top {\n  height: 30px;\n  width: 80px;\n}\n.text {\n  font-size: 10px;\n  font-color: rgb(12, 28, 107);\n}\n.spinner {\n  margin-top: 40%;\n  margin-left: 45%;\n  height: 28px;\n  width: 28px;\n  -webkit-animation: rotate 0.8s infinite linear;\n          animation: rotate 0.8s infinite linear;\n  border: 2px solid #93b5db;\n  border-right-color: transparent;\n  border-radius: 50%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -69313,15 +69318,7 @@ var render = function() {
           _vm.diversosDefinition
         ]
       },
-      [
-        _vm._v(
-          "\n    " +
-            _vm._s(_vm.item.color) +
-            "\n    " +
-            _vm._s(_vm.item.description) +
-            "\n  "
-        )
-      ]
+      [_vm._v("\n    " + _vm._s(_vm.item.description) + "\n  ")]
     ),
     _vm._v(" "),
     _c(
@@ -69523,6 +69520,18 @@ var render = function() {
       _c("item-list", {
         attrs: { itemList: _vm.itemList },
         on: { "del-item-event": _vm.deleteItem }
+      }),
+      _vm._v(" "),
+      _c("el-empty", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.isEmpty,
+            expression: "isEmpty"
+          }
+        ],
+        attrs: { description: "description" }
       }),
       _vm._v(" "),
       _c("button", { on: { click: _vm.goToFilterItem } })
@@ -72806,16 +72815,6 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VueRouter);
 
-
-/***/ }),
-
-/***/ "./node_modules/vue-the-mask/dist/vue-the-mask.js":
-/*!********************************************************!*\
-  !*** ./node_modules/vue-the-mask/dist/vue-the-mask.js ***!
-  \********************************************************/
-/***/ (function(module) {
-
-(function(e,t){ true?module.exports=t():0})(this,function(){return function(e){function t(r){if(n[r])return n[r].exports;var a=n[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,t),a.l=!0,a.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p=".",t(t.s=10)}([function(e,t){e.exports={"#":{pattern:/\d/},X:{pattern:/[0-9a-zA-Z]/},S:{pattern:/[a-zA-Z]/},A:{pattern:/[a-zA-Z]/,transform:function(e){return e.toLocaleUpperCase()}},a:{pattern:/[a-zA-Z]/,transform:function(e){return e.toLocaleLowerCase()}},"!":{escape:!0}}},function(e,t,n){"use strict";function r(e){var t=document.createEvent("Event");return t.initEvent(e,!0,!0),t}var a=n(2),o=n(0),i=n.n(o);t.a=function(e,t){var o=t.value;if((Array.isArray(o)||"string"==typeof o)&&(o={mask:o,tokens:i.a}),"INPUT"!==e.tagName.toLocaleUpperCase()){var u=e.getElementsByTagName("input");if(1!==u.length)throw new Error("v-mask directive requires 1 input, found "+u.length);e=u[0]}e.oninput=function(t){if(t.isTrusted){var i=e.selectionEnd,u=e.value[i-1];for(e.value=n.i(a.a)(e.value,o.mask,!0,o.tokens);i<e.value.length&&e.value.charAt(i-1)!==u;)i++;e===document.activeElement&&(e.setSelectionRange(i,i),setTimeout(function(){e.setSelectionRange(i,i)},0)),e.dispatchEvent(r("input"))}};var s=n.i(a.a)(e.value,o.mask,!0,o.tokens);s!==e.value&&(e.value=s,e.dispatchEvent(r("input")))}},function(e,t,n){"use strict";var r=n(6),a=n(5);t.a=function(e,t){var o=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],i=arguments[3];return Array.isArray(t)?n.i(a.a)(r.a,t,i)(e,t,o,i):n.i(r.a)(e,t,o,i)}},function(e,t,n){"use strict";function r(e){e.component(s.a.name,s.a),e.directive("mask",i.a)}Object.defineProperty(t,"__esModule",{value:!0});var a=n(0),o=n.n(a),i=n(1),u=n(7),s=n.n(u);n.d(t,"TheMask",function(){return s.a}),n.d(t,"mask",function(){return i.a}),n.d(t,"tokens",function(){return o.a}),n.d(t,"version",function(){return c});var c="0.11.1";t.default=r,"undefined"!=typeof window&&window.Vue&&window.Vue.use(r)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(1),a=n(0),o=n.n(a),i=n(2);t.default={name:"TheMask",props:{value:[String,Number],mask:{type:[String,Array],required:!0},masked:{type:Boolean,default:!1},tokens:{type:Object,default:function(){return o.a}}},directives:{mask:r.a},data:function(){return{lastValue:null,display:this.value}},watch:{value:function(e){e!==this.lastValue&&(this.display=e)},masked:function(){this.refresh(this.display)}},computed:{config:function(){return{mask:this.mask,tokens:this.tokens,masked:this.masked}}},methods:{onInput:function(e){e.isTrusted||this.refresh(e.target.value)},refresh:function(e){this.display=e;var e=n.i(i.a)(e,this.mask,this.masked,this.tokens);e!==this.lastValue&&(this.lastValue=e,this.$emit("input",e))}}}},function(e,t,n){"use strict";function r(e,t,n){return t=t.sort(function(e,t){return e.length-t.length}),function(r,a){for(var o=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],i=0;i<t.length;){var u=t[i];i++;var s=t[i];if(!(s&&e(r,s,!0,n).length>u.length))return e(r,u,o,n)}return""}}t.a=r},function(e,t,n){"use strict";function r(e,t){var n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],r=arguments[3];e=e||"",t=t||"";for(var a=0,o=0,i="";a<t.length&&o<e.length;){var u=t[a],s=r[u],c=e[o];s&&!s.escape?(s.pattern.test(c)&&(i+=s.transform?s.transform(c):c,a++),o++):(s&&s.escape&&(a++,u=t[a]),n&&(i+=u),c===u&&o++,a++)}for(var f="";a<t.length&&n;){var u=t[a];if(r[u]){f="";break}f+=u,a++}return i+f}t.a=r},function(e,t,n){var r=n(8)(n(4),n(9),null,null);e.exports=r.exports},function(e,t){e.exports=function(e,t,n,r){var a,o=e=e||{},i=typeof e.default;"object"!==i&&"function"!==i||(a=e,o=e.default);var u="function"==typeof o?o.options:o;if(t&&(u.render=t.render,u.staticRenderFns=t.staticRenderFns),n&&(u._scopeId=n),r){var s=u.computed||(u.computed={});Object.keys(r).forEach(function(e){var t=r[e];s[e]=function(){return t}})}return{esModule:a,exports:o,options:u}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("input",{directives:[{name:"mask",rawName:"v-mask",value:e.config,expression:"config"}],attrs:{type:"text"},domProps:{value:e.display},on:{input:e.onInput}})},staticRenderFns:[]}},function(e,t,n){e.exports=n(3)}])});
 
 /***/ }),
 

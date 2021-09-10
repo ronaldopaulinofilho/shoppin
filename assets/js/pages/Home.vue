@@ -2,6 +2,7 @@
   <div id="app">
     <add-item v-model="newItem.url" v-on:add-item-event="addItem" />
     <item-list :itemList="itemList" v-on:del-item-event="deleteItem" />
+    <el-empty v-show="isEmpty" description="description"></el-empty>
     <button @click="goToFilterItem"></button>
   </div>
 </template>
@@ -27,12 +28,14 @@ export default {
         images: "",
       },
       isCollapse: true,
+      isEmpty: true,
     };
   },
 
   mounted() {
     if (localStorage.getItem("itemList")) {
       this.itemList = JSON.parse(localStorage.getItem("itemList"));
+      this.isEmpty = false;
     }
   },
 

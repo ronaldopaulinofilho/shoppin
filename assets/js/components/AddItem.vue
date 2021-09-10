@@ -15,8 +15,8 @@
       v-model="color"
       show-alpha
       :predefine="predefineColors"
-    >
-    </el-color-picker>
+    />
+
     <form @submit="addItem">
       <div class="url-group">
         <input

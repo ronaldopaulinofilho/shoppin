@@ -13,7 +13,6 @@
       ]"
       class="category"
     >
-      {{ item.color }}
       {{ item.description }}
     </div>
     <a :href="item.url" style="text-decoration: none">
@@ -152,14 +151,14 @@ export default {
 </script>
 <style sass>
 .category {
-  border-radius: 20px 2px 30px 20px;
-  background-color: #93b5db;
-  min-width: 10%;
+  border-radius: 20px 20px 2px 20px;
+  background-color: #f3f722;
+  min-width: 12%;
   max-width: 20%;
   height: 30px;
   padding: 8px;
-  margin-top: 100px;
-  box-shadow: 2px 16px 30px 0px rgba(0, 0, 0, 0.15);
+  margin-top: 108px;
+  box-shadow: 0px -3px 8px rgba(112, 144, 176, 0.16);
 }
 .eletroDefinition {
   backgroundcolor: "#f5365c";
