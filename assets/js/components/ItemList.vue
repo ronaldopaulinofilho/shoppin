@@ -29,12 +29,6 @@ export default {
     filterItem(description) {
       this.$emit("filter-item-event", description);
     },
-    getCategory(description) {
-      this.itemList = this.itemList.filter(
-        (item) => item.description !== description
-      );
-      localStorage.getItem("itemList.item.description");
-    },
   },
 };
 </script>

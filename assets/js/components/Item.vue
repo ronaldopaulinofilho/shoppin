@@ -1,18 +1,6 @@
 <template>
   <div class="card-item">
-    <div
-      :class="[
-        hasEletro,
-        vestuarioDefinition,
-        mercadoDefinition,
-        eletrodomesticoDefinition,
-        belezaDefinition,
-        informaticaDefinition,
-        livrosDefinition,
-        diversosDefinition,
-      ]"
-      class="category"
-    >
+    <div class="category" v-background="item.color">
       {{ item.description }}
     </div>
     <a :href="item.url" style="text-decoration: none">
@@ -49,89 +37,17 @@ export default {
     item: {
       type: Object,
     },
-    hasEletro: {
-      type: Boolean,
-      default: false,
-    },
-    hasVestuario: {
-      type: Boolean,
-      default: false,
-    },
-    hasMercado: {
-      type: Boolean,
-      default: false,
-    },
-    hasEletrodomestico: {
-      type: Boolean,
-      default: true,
-    },
-    hasBeleza: {
-      type: Boolean,
-      default: false,
-    },
-    hasInformatica: {
-      type: Boolean,
-      default: false,
-    },
-    hasLivros: {
-      type: Boolean,
-      default: false,
-    },
-    hasDiversos: {
-      type: Boolean,
-      default: false,
+    color: {
+      type: String,
     },
   },
   data() {
     return {
       id: "",
-      url: "https://www.uol.com.br",
-      description: "eletro",
+      url: "",
+      description: "",
       img: "",
-      color: "#1e90ff",
     };
-  },
-  computed: {
-    eletroDefinition() {
-      if (this.item.description === "Eletro") {
-        return (this.hasEletro = "eletroDefinition");
-      }
-    },
-    vestuarioDefinition() {
-      if (this.item.description === "Vestuário") {
-        return this.hasVestuario ? "vestuarioDefinition" : "";
-      }
-    },
-    mercadoDefinition() {
-      if (this.item.description === "Mercado") {
-        return this.hasMercado ? "mercadoDefinition" : "";
-      }
-    },
-    eletrodomesticoDefinition() {
-      if (this.item.description === "Eletrodoméstico") {
-        return this.hasEletrodomestico ? "eletrodomesticoDefinition" : "";
-      }
-    },
-    belezaDefinition() {
-      if (this.item.description === "Beleza") {
-        return this.hasBeleza ? "belezaDefinition" : "";
-      }
-    },
-    informaticaDefinition() {
-      if (this.item.description === "Informática") {
-        return this.hasInformatica ? "informaticaDefinition" : "";
-      }
-    },
-    livrosDefinition() {
-      if (this.item.description === "Livros") {
-        return this.hasLivros ? "livrosDefinition" : "";
-      }
-    },
-    diversosDefinition() {
-      if (this.item.description === "Diversos") {
-        return this.hasDiversos ? "diversosDefinition" : "";
-      }
-    },
   },
 
   methods: {
@@ -160,32 +76,6 @@ export default {
   margin-top: 108px;
   box-shadow: 0px -3px 8px rgba(112, 144, 176, 0.16);
 }
-.eletroDefinition {
-  backgroundcolor: "#f5365c";
-}
-.vestuarioDefinition {
-  backgroundcolor: "#ffbb33";
-}
-.mercadoDefinition {
-  backgroundcolor: "#5e72e4";
-}
-.eletrodomesticoDefinition {
-  backgroundcolor: "#11cdef";
-}
-.belezaDefinition {
-  backgroundcolor: "#80bdef";
-}
-.informaticaDefinition {
-  background: "#f8bdef";
-}
-.livrosDefinition {
-  backgroundcolor: "#90bdbe";
-}
-.diversosDefinition {
-  backgroundcolor: "#fbff08";
-}
-@import url("https://fonts.googleapis.com/css?family=SF-UI:400,600");
-
 .card-item {
   border-radius: 20px;
   background-color: #fff;
@@ -196,10 +86,11 @@ export default {
   display: flex;
   flex-direction: collumn;
   justify-content: space-between;
+  width: 400px;
 }
 .card-img-top {
-  height: 30px;
-  width: 80px;
+  height: 20px;
+  width: 70px;
 }
 .text {
   font-size: 10px;

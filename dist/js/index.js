@@ -1696,6 +1696,9 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_6__["default"].use((element_ui__WEBPACK_IMPORTED_MODULE_3___default()), {
   locale: element_ui_lib_locale_lang_pt_br__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
+vue__WEBPACK_IMPORTED_MODULE_6__["default"].directive('background', function (el, binding) {
+  el.style.backgroundColor = binding.value;
+});
 new vue__WEBPACK_IMPORTED_MODULE_6__["default"]({
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"],
   render: function render(h) {
@@ -1810,7 +1813,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "AddItem",
@@ -1826,8 +1828,8 @@ __webpack_require__.r(__webpack_exports__);
       description: "",
       edit: false,
       validateUrl: false,
-      color: "#1e90ff",
-      predefineColors: ["#ff4500", "#ff8c00", "#ffd700", "#90ee90", "#00ced1", "#1e90ff", "#c71585", "rgba(255, 69, 0, 0.68)", "rgb(255, 120, 0)", "hsv(51, 100, 98)", "hsva(120, 40, 94, 0.5)", "hsl(181, 100%, 37%)", "hsla(209, 100%, 56%, 0.73)", "#c7158577"],
+      color: "#ffd700",
+      predefineColors: ["#ff4500", "#ff8c00", "#ffd700", "#90ee90", "#00ced1", "#1e90ff", "#c71585", "rgba(255, 69, 0, 0.68)", "rgb(255, 120, 0)", "hsl(181, 100%, 37%)", "hsla(209, 100%, 56%, 0.73)", "#c7158577"],
       options: [{
         description: "Eletro",
         label: "Eletro"
@@ -1929,18 +1931,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Item",
@@ -1951,89 +1941,17 @@ __webpack_require__.r(__webpack_exports__);
     item: {
       type: Object
     },
-    hasEletro: {
-      type: Boolean,
-      "default": false
-    },
-    hasVestuario: {
-      type: Boolean,
-      "default": false
-    },
-    hasMercado: {
-      type: Boolean,
-      "default": false
-    },
-    hasEletrodomestico: {
-      type: Boolean,
-      "default": true
-    },
-    hasBeleza: {
-      type: Boolean,
-      "default": false
-    },
-    hasInformatica: {
-      type: Boolean,
-      "default": false
-    },
-    hasLivros: {
-      type: Boolean,
-      "default": false
-    },
-    hasDiversos: {
-      type: Boolean,
-      "default": false
+    color: {
+      type: String
     }
   },
   data: function data() {
     return {
       id: "",
-      url: "https://www.uol.com.br",
-      description: "eletro",
-      img: "",
-      color: "#1e90ff"
+      url: "",
+      description: "",
+      img: ""
     };
-  },
-  computed: {
-    eletroDefinition: function eletroDefinition() {
-      if (this.item.description === "Eletro") {
-        return this.hasEletro = "eletroDefinition";
-      }
-    },
-    vestuarioDefinition: function vestuarioDefinition() {
-      if (this.item.description === "Vestuário") {
-        return this.hasVestuario ? "vestuarioDefinition" : "";
-      }
-    },
-    mercadoDefinition: function mercadoDefinition() {
-      if (this.item.description === "Mercado") {
-        return this.hasMercado ? "mercadoDefinition" : "";
-      }
-    },
-    eletrodomesticoDefinition: function eletrodomesticoDefinition() {
-      if (this.item.description === "Eletrodoméstico") {
-        return this.hasEletrodomestico ? "eletrodomesticoDefinition" : "";
-      }
-    },
-    belezaDefinition: function belezaDefinition() {
-      if (this.item.description === "Beleza") {
-        return this.hasBeleza ? "belezaDefinition" : "";
-      }
-    },
-    informaticaDefinition: function informaticaDefinition() {
-      if (this.item.description === "Informática") {
-        return this.hasInformatica ? "informaticaDefinition" : "";
-      }
-    },
-    livrosDefinition: function livrosDefinition() {
-      if (this.item.description === "Livros") {
-        return this.hasLivros ? "livrosDefinition" : "";
-      }
-    },
-    diversosDefinition: function diversosDefinition() {
-      if (this.item.description === "Diversos") {
-        return this.hasDiversos ? "diversosDefinition" : "";
-      }
-    }
   },
   methods: {
     deleteAndNotify: function deleteAndNotify() {
@@ -2097,12 +2015,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     filterItem: function filterItem(description) {
       this.$emit("filter-item-event", description);
-    },
-    getCategory: function getCategory(description) {
-      this.itemList = this.itemList.filter(function (item) {
-        return item.description !== description;
-      });
-      localStorage.getItem("itemList.item.description");
     }
   }
 });
@@ -4034,7 +3946,6 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,600);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".url-group {\n  margin: 20px 20px 30px 30px;\n}\n.url-group input[type=text] {\n  height: 40px;\n  border: none;\n  padding: 1.5px;\n  padding-left: 10px;\n  padding-right: 10px;\n  border-radius: 8px 8px 8px 8px;\n  border-color: transparent;\n  width: 72.5%;\n  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);\n  float: center;\n  display: inline-block;\n  text-align: center;\n  font-family: \"SF UI Display\", sans-serif;\n  font-size: 15px;\n  margin: 12px;\n  outline: none;\n}\n.url-group input[type=text]:focus {\n  outline: none;\n}\n.select-category {\n  height: 20px;\n}\n.card {\n  width: 250px;\n  height: 100%;\n  border-radius: 8px;\n  background-color: #fff;\n  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);\n  font-family: \"Hind Siliguri\", sans-serif;\n  float: center;\n  display: inline-block;\n  text-align: center;\n}\n.card-img-top {\n  height: 100px;\n  width: 100px;\n}\n.spinner {\n  margin-top: 40%;\n  margin-left: 45%;\n  height: 28px;\n  width: 28px;\n  -webkit-animation: rotate 0.8s infinite linear;\n          animation: rotate 0.8s infinite linear;\n  border: 2px solid #93b5db;\n  border-right-color: transparent;\n  border-radius: 50%;\n}", ""]);
 // Exports
@@ -4093,7 +4004,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n}\n#nav {\n  padding: 30px;\n}\n#nav a {\n  font-weight: bold;\n  color: #2c3e50;\n}\n#nav a.router-link-exact-active {\n  color: #42b983;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\n  font-family: Avenir, \"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif Helvetica,\n    Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #ffffff;\n  font-weight: 500;\n}\n#nav {\n  padding: 20px;\n}\n#nav a {\n  font-weight: bold;\n  color: #124e8a;\n}\n#nav a.router-link-exact-active {\n  color: #42b983;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4116,9 +4027,8 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=SF-UI:400,600);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.category {\n  border-radius: 20px 20px 2px 20px;\n  background-color: #f3f722;\n  min-width: 12%;\n  max-width: 20%;\n  height: 30px;\n  padding: 8px;\n  margin-top: 108px;\n  box-shadow: 0px -3px 8px rgba(112, 144, 176, 0.16);\n}\n.eletroDefinition {\n  backgroundcolor: \"#f5365c\";\n}\n.vestuarioDefinition {\n  backgroundcolor: \"#ffbb33\";\n}\n.mercadoDefinition {\n  backgroundcolor: \"#5e72e4\";\n}\n.eletrodomesticoDefinition {\n  backgroundcolor: \"#11cdef\";\n}\n.belezaDefinition {\n  backgroundcolor: \"#80bdef\";\n}\n.informaticaDefinition {\n  background: \"#f8bdef\";\n}\n.livrosDefinition {\n  backgroundcolor: \"#90bdbe\";\n}\n.diversosDefinition {\n  backgroundcolor: \"#fbff08\";\n}\n.card-item {\n  border-radius: 20px;\n  background-color: #fff;\n  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);\n  font-family: \"Hind Siliguri\", sans-serif;\n  float: center;\n  margin: 20px;\n  display: flex;\n  flex-direction: collumn;\n  justify-content: space-between;\n}\n.card-img-top {\n  height: 30px;\n  width: 80px;\n}\n.text {\n  font-size: 10px;\n  font-color: rgb(12, 28, 107);\n}\n.spinner {\n  margin-top: 40%;\n  margin-left: 45%;\n  height: 28px;\n  width: 28px;\n  -webkit-animation: rotate 0.8s infinite linear;\n          animation: rotate 0.8s infinite linear;\n  border: 2px solid #93b5db;\n  border-right-color: transparent;\n  border-radius: 50%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.category {\n  border-radius: 20px 20px 2px 20px;\n  background-color: #f3f722;\n  min-width: 12%;\n  max-width: 20%;\n  height: 30px;\n  padding: 8px;\n  margin-top: 108px;\n  box-shadow: 0px -3px 8px rgba(112, 144, 176, 0.16);\n}\n.card-item {\n  border-radius: 20px;\n  background-color: #fff;\n  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);\n  font-family: \"Hind Siliguri\", sans-serif;\n  float: center;\n  margin: 20px;\n  display: flex;\n  flex-direction: collumn;\n  justify-content: space-between;\n  width: 400px;\n}\n.card-img-top {\n  height: 20px;\n  width: 70px;\n}\n.text {\n  font-size: 10px;\n  font-color: rgb(12, 28, 107);\n}\n.spinner {\n  margin-top: 40%;\n  margin-left: 45%;\n  height: 28px;\n  width: 28px;\n  -webkit-animation: rotate 0.8s infinite linear;\n          animation: rotate 0.8s infinite linear;\n  border: 2px solid #93b5db;\n  border-right-color: transparent;\n  border-radius: 50%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -69172,11 +69082,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("el-color-picker", {
-        attrs: {
-          size: "small",
-          "show-alpha": "",
-          predefine: _vm.predefineColors
-        },
+        attrs: { size: "small", predefine: _vm.predefineColors },
         model: {
           value: _vm.color,
           callback: function($$v) {
@@ -69306,17 +69212,15 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "category",
-        class: [
-          _vm.hasEletro,
-          _vm.vestuarioDefinition,
-          _vm.mercadoDefinition,
-          _vm.eletrodomesticoDefinition,
-          _vm.belezaDefinition,
-          _vm.informaticaDefinition,
-          _vm.livrosDefinition,
-          _vm.diversosDefinition
-        ]
+        directives: [
+          {
+            name: "background",
+            rawName: "v-background",
+            value: _vm.item.color,
+            expression: "item.color"
+          }
+        ],
+        staticClass: "category"
       },
       [_vm._v("\n    " + _vm._s(_vm.item.description) + "\n  ")]
     ),
