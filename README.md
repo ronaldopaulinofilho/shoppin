@@ -21,3 +21,16 @@ Se destaca como diferencial de mercado por sua característica específica, volt
 ## [Prototipação](/doc/prototipacao/README.md)
 
 ## [Instalação](/doc/instalacao/READ.md)
+Baixe o Dist na release do projeto.
+Acesse o navegador e vá até a página de extensões.
+Ela se encontra através do endereço chrome://extensions/ ou por meio do caminho: 
+Menu > Mais Ferramentas > Extensões.
+
+Acessando o menu de extensões do Chrome
+Primeiramente, habilite o Modo do desenvolvedor.
+Ao fazer isso, as opções:
+“Carregar sem Compactação”,
+“Compactar Extensão” 
+“Atualizar” ficarão disponíveis. 
+Clique na primeira opção e selecione o caminho do diretório onde estão os arquivos do seu projeto.
+O ícone da Shoppin irá aparecer na barra do navegador.
