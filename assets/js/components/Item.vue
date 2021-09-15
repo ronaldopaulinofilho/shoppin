@@ -3,16 +3,19 @@
     <div class="category" v-background="item.color">
       {{ item.description }}
     </div>
-    <a :href="item.url" style="text-decoration: none">
+    <el-link :href="item.url" target="_blank" :underline="false">
       <div>
         <link-prevue :url="item.url">
+          <template slot="loading">
+            <i class="el-icon-loading" />
+          </template>
           <template slot-scope="props">
             <img class="card-img-top" :src="props.img" :alt="props.title" />
             <h2 class="text">{{ props.title }}</h2>
           </template>
         </link-prevue>
       </div>
-    </a>
+    </el-link>
     <div>
       <el-button
         class="button"
@@ -47,6 +50,7 @@ export default {
       url: "",
       description: "",
       img: "",
+      isNotFilterItem: true,
     };
   },
 
@@ -59,13 +63,10 @@ export default {
         offset: 100,
       });
     },
-    filter() {
-      this.$emit("filter-item", this.item.description);
-    },
   },
 };
 </script>
-<style sass>
+<style >
 .category {
   border-radius: 20px 20px 2px 20px;
   background-color: #f3f722;
@@ -82,7 +83,7 @@ export default {
   box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);
   font-family: "Hind Siliguri", sans-serif;
   float: center;
-  margin: 20px;
+  margin: 20px 50px 20px 70px;
   display: flex;
   flex-direction: collumn;
   justify-content: space-between;

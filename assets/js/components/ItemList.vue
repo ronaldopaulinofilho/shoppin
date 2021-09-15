@@ -2,11 +2,7 @@
   <div>
     <draggable :list="itemList">
       <div v-bind:key="item.id" v-for="item in itemList">
-        <item
-          v-bind:item="item"
-          v-on:del-item="delItem"
-          v-on:filter-item="filterItem"
-        ></item>
+        <item v-bind:item="item" v-on:del-item="delItem"></item>
       </div>
     </draggable>
   </div>
@@ -25,9 +21,6 @@ export default {
   methods: {
     delItem(id) {
       this.$emit("del-item-event", id);
-    },
-    filterItem(description) {
-      this.$emit("filter-item-event", description);
     },
   },
 };

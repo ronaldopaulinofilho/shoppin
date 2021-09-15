@@ -1,20 +1,23 @@
 <template>
   <div id="app">
+    <side-bar />
     <add-item v-model="newItem.url" v-on:add-item-event="addItem" />
     <item-list :itemList="itemList" v-on:del-item-event="deleteItem" />
     <el-empty v-show="isEmpty" description="description"></el-empty>
-    <button @click="goToFilterItem"></button>
+    <div class="footer">@Copyright SHOPPIN All rights reserved 2021.</div>
   </div>
 </template>
 
 <script>
 import ItemList from "../components/ItemList";
 import AddItem from "../components/AddItem";
+import SideBar from "../components/SideBar.vue";
 
 export default {
   components: {
     ItemList,
     AddItem,
+    SideBar,
   },
   data() {
     return {
@@ -55,16 +58,6 @@ export default {
 
     deleteItem(id) {
       this.itemList = this.itemList.filter((item) => item.id !== id);
-      localStorage.removeItem(id);
-    },
-    getCategory(description) {
-      this.itemList = this.itemList.filter(
-        (item) => item.description !== description
-      );
-      localStorage.getItem(this.item);
-    },
-    goToFilterItem() {
-      this.$router.push({ path: "/filter-item" });
     },
   },
 };
@@ -79,20 +72,8 @@ body {
   overflow: hidden;
   border-radius: 10px;
 }
-#logo {
-  cursor: pointer;
-  margin: 10px;
-  height: 20px;
-  width: 30px;
-  animation: go-back 5s alternate;
-  border-radius: 8px;
-}
-@keyframes go-back {
-  from {
-    transform: translateX(150px);
-  }
-  to {
-    transform: translateX(0px);
-  }
+.footer {
+  margin: 20px;
+  font-size: 12px;
 }
 </style>

@@ -10,12 +10,6 @@
       </template>
     </link-prevue>
 
-    <el-color-picker
-      size="small"
-      v-model="color"
-      :predefine="predefineColors"
-    />
-
     <form @submit="addItem">
       <div class="url-group">
         <input
@@ -23,24 +17,35 @@
           v-model="url"
           placeholder="Adicione seu link de compras"
         />
+        <div>
+          <div>
+            <el-color-picker
+              style="top: 12px"
+              size="small"
+              v-model="color"
+              :predefine="predefineColors"
+            />
 
-        <el-select v-model="description" placeholder="Categoria">
-          <el-option
-            v-for="item in options"
-            :key="item.description"
-            :label="item.label"
-            :value="item.description"
-          >
-          </el-option>
-        </el-select>
-        <el-button
-          type="primary"
-          plain
-          icon="el-icon-check"
-          style="color: blue"
-          @click="addItem"
-          circle
-        ></el-button>
+            <el-select v-model="description" placeholder="Categoria">
+              <el-option
+                style="color: #1e90ff"
+                v-for="item in options"
+                :key="item.description"
+                :label="item.label"
+                :value="item.description"
+              >
+              </el-option>
+            </el-select>
+          </div>
+          <el-button
+            type="primary"
+            plain
+            icon="el-icon-check"
+            style="color: blue"
+            @click="addItem"
+            circle
+          ></el-button>
+        </div>
       </div>
     </form>
   </div>
@@ -149,7 +154,9 @@ export default {
 
 <style lang="scss">
 .url-group {
-  margin: 20px 20px 30px 30px;
+  margin: 2px 20px 30px 33px;
+  width: 400px;
+  justify-content: center;
 }
 .url-group input[type="text"] {
   height: 40px;
@@ -171,9 +178,6 @@ export default {
 }
 .url-group input[type="text"]:focus {
   outline: none;
-}
-.select-category {
-  height: 20px;
 }
 .card {
   width: 250px;
