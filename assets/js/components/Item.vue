@@ -91,21 +91,10 @@ export default {
 }
 .card-img-top {
   height: 20px;
-  width: 70px;
+  width: 90px;
 }
 .text {
   font-size: 10px;
   font-color: rgb(12, 28, 107);
-}
-
-.spinner {
-  margin-top: 40%;
-  margin-left: 45%;
-  height: 28px;
-  width: 28px;
-  animation: rotate 0.8s infinite linear;
-  border: 2px solid #93b5db;
-  border-right-color: transparent;
-  border-radius: 50%;
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div>
     <side-bar />
+    <img
+      class="shoppin"
+      src="https://user-images.githubusercontent.com/61764094/127951056-f32777ff-277b-49fa-a048-4ff4277a0b1b.png"
+    />
     <div class="description">
       <enhanced-check-radio
         :label="[
@@ -90,12 +94,18 @@ export default {
 
 <style lang="scss">
 .description {
-  margin: 80px 20px 20px 20px;
+  margin: 20px 2px 2px 2px;
 }
 .enhancedCheck {
-  font-size: 14px;
+  font-size: 16px;
   color: #2e8db9;
   font-family: sans-serif;
   font-weight: 300px;
+}
+.shoppin {
+  border-radius: 80px;
+  width: 80px;
+  height: 80px;
+  box-shadow: 2px 14px 32px 0px rgba(0, 0, 0, 0.15);
 }
 </style>

@@ -101,7 +101,7 @@ export default {
 }
 
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(92, 120, 133, 0.24);
 }
 .bm-item-list {
   color: #ffffff;

@@ -1,6 +1,9 @@
 <template>
-  <div class="url-group">
+  <div>
     <link-prevue :url="url">
+      <template slot="loading">
+        <i class="el-icon-loading" />
+      </template>
       <template slot-scope="props">
         <div class="card">
           <img class="card-img-top" :src="props.img" :alt="props.title" />
@@ -154,9 +157,8 @@ export default {
 
 <style lang="scss">
 .url-group {
-  margin: 2px 20px 30px 33px;
+  margin: 20px 20px 30px 70px;
   width: 400px;
-  justify-content: center;
 }
 .url-group input[type="text"] {
   height: 40px;
@@ -189,12 +191,12 @@ export default {
   float: center;
   display: inline-block;
   text-align: center;
+  color: #93b5db;
 }
 .card-img-top {
   height: 100px;
   width: 100px;
 }
-
 .spinner {
   margin-top: 40%;
   margin-left: 45%;
